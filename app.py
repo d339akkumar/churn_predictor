@@ -1,4 +1,4 @@
-import jonlib
+import joblib
 import streamlit as st
 import pandas as pd
 from notebook_utils import load_model, preprocess_input, make_prediction
