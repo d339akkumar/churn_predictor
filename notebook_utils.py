@@ -1,10 +1,18 @@
 import joblib
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, StandardScaler
+import requests
 
-# Load model
-def load_model(path="churn_model.pkl"):
-    return joblib.load(path)
+def load_model():
+    model_path = "churn_model.pkl"
+    if not os.path.exists(model_path):
+        print("Downloading model from Google Drive...")
+        url = "https://drive.google.com/uc?export=download&id=1Wq0R1mK38ZTpqKHEQYvf-7QT-2VLd5yG"
+        response = requests.get(url)
+        with open(model_path, "wb") as f:
+            f.write(response.content)
+    return joblib.load(model_path)
+
 
 # Preprocessing (must match training)
 def preprocess_input(data):
