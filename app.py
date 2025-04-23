@@ -11,7 +11,7 @@ model = load_model()
 # Input form
 st.header("Enter Customer Details")
 gender = st.selectbox("Gender", ["Male", "Female"])
-subscription_type = st.selectbox("Subscription Type", ["Basic", "Premium", "VIP"])
+subscription_type = st.selectbox("Subscription Type", ["Basic", "Premium", "Standard"])
 contract_length = st.selectbox("Contract Length", ["Monthly", "Quarterly", "Yearly"])
 age = st.slider("Age", 18, 100)
 tenure = st.slider("Tenure", 0, 72)
